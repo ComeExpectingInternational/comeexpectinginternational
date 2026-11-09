@@ -665,6 +665,7 @@
       <div>
         <form id="booking-form" class="reveal" novalidate>
           <input type="hidden" name="_subject" value="New booking request">
+          <input type="hidden" name="form" value="Booking request">
           <div class="hp" aria-hidden="true"><label for="b-hp">Leave this empty</label><input id="b-hp" name="_gotcha" tabindex="-1" autocomplete="off"></div>
 
           <fieldset>
@@ -793,6 +794,7 @@
       <div>
         <form id="contact-form" class="reveal" novalidate>
           <input type="hidden" name="_subject" value="New message from the website">
+          <input type="hidden" name="form" value="Contact message">
           <div class="hp" aria-hidden="true"><label for="c-hp">Leave this empty</label><input id="c-hp" name="_gotcha" tabindex="-1" autocomplete="off"></div>
           <div class="form-grid">
             <div class="full">
@@ -862,6 +864,8 @@
       <p>Get updates on new meetings, livestreams, and testimonies.</p>
     </div>
     <form class="nl-form" id="newsletter-form" novalidate>
+      <input type="hidden" name="_subject" value="New newsletter signup">
+      <input type="hidden" name="form" value="Newsletter signup">
       <label for="nl-email" class="hp">Email address</label>
       <input id="nl-email" name="email" type="email" placeholder="Your email address" autocomplete="email" required>
       <button class="btn" type="submit">Sign up</button>
@@ -901,13 +905,13 @@
 
 <script>
   /* ---------------------------------------------------------------
-     FORM CONNECTIONS
-     When the site is hosted (Netlify, GitHub Pages, etc.), create free
-     forms at formspree.io and paste each endpoint below, for example:
-     booking: "https://formspree.io/f/abcdwxyz"
-     Left empty, the forms run in preview mode and send nothing.
+     FORM CONNECTION
+     One Formspree form collects booking requests, contact messages,
+     and newsletter signups. Each one arrives with its own subject line.
+     To switch forms later, change the link on the next line.
   ---------------------------------------------------------------- */
-  const FORM_ENDPOINTS = { booking: "", contact: "", newsletter: "" };
+  const FORM_ENDPOINT = "https://formspree.io/f/xljjydel";
+  const FORM_ENDPOINTS = { booking: FORM_ENDPOINT, contact: FORM_ENDPOINT, newsletter: FORM_ENDPOINT };
   const CONTACT_EMAIL = "LuigiandGiovannia@comeexpectinginternational.com";
 
   const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
